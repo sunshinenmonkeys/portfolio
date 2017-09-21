@@ -1,180 +1,309 @@
 /* Parallax base styles
   --------------------------------------------- */
 
-  .parallax {
-    height: 500px; /* fallback for older browsers */
+.parallax {
+    height: 500px;
+    /* fallback for older browsers */
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
     -webkit-perspective: 300px;
     perspective: 500px;
-  }
+}
 
-  .parallax__group {
+.parallax__group {
     position: relative;
-    height: 500px; /* fallback for older browsers */
+    height: 500px;
+    /* fallback for older browsers */
     height: 60vh;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
-  }
+}
 
-  .parallax__layer {
+.parallax__layer {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-  }
+}
 
-  .parallax__layer--fore {
+.parallax__layer--fore {
     -webkit-transform: translateZ(90px) scale(.7);
     transform: translateZ(90px) scale(.7);
     z-index: 1;
+}
 
-  }
-
-  .parallax__layer--base {
+.parallax__layer--base {
     -webkit-transform: translateZ(0);
     transform: translateZ(1);
     z-index: 4;
+}
 
-  }
-
-  .parallax__layer--back {
+.parallax__layer--back {
     -webkit-transform: translateZ(-300px) scale(2);
     transform: translateZ(-300px) scale(2);
     z-index: 3;
-  }
+}
 
-  .parallax__layer--deep {
+.parallax__layer--deep {
     -webkit-transform: translateZ(-600px) scale(3);
     transform: translateZ(-600px) scale(3);
     z-index: 2;
-  }
+}
 
 
 
-  /* styles
+
+
+
+
+
+
+/* styles
   --------------------------------------------- */
 
-  body, html {
+body,
+html {
     overflow: hidden;
-  }
+}
 
-  body {
-    font: 100% / 1.5 Allerta; 
-    background-image: url(../images/roses.jpg);
+body {
+    font: 100% / 1.25 Allerta;
+    background-image: url(../images/lighthouse.jpg);
     color: white;
+}
 
-  }
+* {
+    margin: 0;
+    padding: 0;
+}
 
-  * {
-    margin:0;
-    padding:0;
-  }
-
-  .parallax {
+.parallax {
     font-size: 200%;
-  }
+}
 
-   /* centre the content in the parallax layers */
-  .title {
+
+
+
+
+
+
+/* centre the content in the parallax layers */
+
+.title {
     text-align: center;
     position: absolute;
     left: 50%;
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-  }
+}
 
-  .about {
+.about {
     top: 43%;
-    left: 63%;
-    color: #fff;
-  }
+    left: 36%;
+    color: black;
+    font-size: .8em;
+    width: 30%;
+    text-align: right;
+    padding: 30px;
+}
+
+hr {
+    margin: 10px;
+}
+
+
+
+
+
+
 
 /* style the groups
   --------------------------------------------- */
 
-  #group1 {
-    z-index: 1; /* slide over group 2 */
-  }
-
-  #group2 {
-    z-index: 3; /* slide under groups 1 and 3 */
-  }
-  #group2 .parallax__layer--base {
-    background-image: url(../images/sunflower.jpg);
-
-  }
-
-  #group3 {
-    z-index: 4; /* slide over group 2 and 4 */
+#group1 {
+    z-index: 1;
+    /* slide over group 2 */
     height: 100vh;
-  }
-  #group3 .parallax__layer--base {
-    background: #ffd1bc;
-  }
+}
 
-  #group3 .parallax__layer--fore {
+#group2 {
+    z-index: 3;
+    /* slide under groups 1 and 3 */
+    text-align: center;
 
-  }
+}
 
-  /* misc
+#group2 .parallax__layer--base {
+    background: #b7b7b7;
+       text-align: center;
+}
+
+#group4 .parallax__layer--base {
+/*    background-image: url(../images/arab_tile.png);
+*/    text-align: center;
+}
+
+#group4 {
+    height: 100%;
+}
+
+#group3 {
+    z-index: 4;
+    /* slide over group 2 and 4 */
+    height: 100vh;
+}
+
+#group3 .parallax__layer--base {
+    background: #fff;
+    text-align: center;
+    display: inline-block;
+}
+
+
+
+
+
+
+
+
+/* misc
   --------------------------------------------- */
-  .demo__info {
+
+.demo__info {
     position: absolute;
-    z-index:100;
+    z-index: 100;
     bottom: 1vh;
     top: auto;
-    font-size:80%;
-    text-align:center;
+    font-size: 80%;
+    text-align: center;
     width: 100%;
-  }
+}
 
-  .bio-pic {
-    height:400px;
-    float: left;
+.bio-pic {
+    height: 200px;
     text-align: center;
     position: absolute;
-    left: 37%;
-    top: 43%;
+    left: 50%;
+    top: 40%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     border-radius: 50%;
-  }
+}
 
-  .name {
+.name {
     top: 15%;
-    font-size: 60px;
+    font-size: 2.5em;
     font-family: "Cormorant Unicase", serif;
     font-weight: bold;
+    border-style: double;
+    padding: 10px;
+}
 
-  }
-
-  .icons {
+.icons {
     top: 40%;
-  }
+    font-size: 3em;
+}
 
-  i {
+i {
     margin: 30px;
-  }
+}
 
-  a, a:visited {
+.fa-caret-down {
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 98%;
+    font-size: 50px;
+}
+
+.bounce {
+    animation-name: bounce;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+}
+
+@keyframes bounce {
+    from {
+        top: 98%;
+    }
+    to {
+        top: 97%;
+    }
+}
+
+/*a:visited {
     color: white;
-  }
+}*/
 
-  a:hover {
+a:hover {
     color: #ffd1bc;
-  }
+}
 
-  .fontizer {
-    float:left;
-    height:400px;
-  }
+a {
+    text-decoration: none;
+    color: #0b3b7a;
+}
 
-  .font-site{
-        top: 90%;
+.sectionTitle {
+    margin-top: 50px;
+    border-bottom: 1px solid;
+    width: 25%;
+    display: inline-block;
+    padding-bottom:20px;
+    font-weight: 900;
+    color: #0b3b7a;
+}
 
-  }
+.projects,
+.technologies {
+    width: 50%;
+/*    display: inline-block;
+*/    padding-bottom: 20px;
+}
+
+.appData {
+    display: inline-block;
+    width: 40%;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    color: black;
+}
+
+.techIcons {
+    max-width: 175px;
+    max-height: 175px;
+    margin: 20px;
+}
+
+.aboutText {
+    top: 75%;
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 35%;
+    left: 50%;
+    text-align: center;
+}
+
+nav li {
+    float: right;
+    display: inline;
+    font-size: 1em;
+    margin: 10px;
+    padding-right:10px;
+}
+
+
+nav ul {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+}
 
